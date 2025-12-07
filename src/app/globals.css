@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+
+:root {
+  /* --- BACKGROUNDS --- */
+  /* Dark Brown (For Hero & Main Layout) */
+  --color-brown-900: #332419;
+  --color-brown-800: #4D3626;
+
+  /* Mid-tone Wood/Tan (For Customization Section) */
+  --color-tan-600: #997B5E;
+  --color-tan-500: #B09378;
+
+  /* --- ACCENTS --- */
+  /* Cognac/Burnt Orange (Primary Buttons) */
+  --color-cognac-default: #A65E2E;
+  --color-cognac-light: #B86F3F;
+
+  /* Gold/Bronze Tones */
+  --color-gold-default: #C4A05E; /* Your original gold */
+  /* NEW ADDITIONS BELOW */
+  --color-gold-rich: #B6771D;    /* The darker, richer bronze-gold you requested */
+  --color-gold-bright: #FFCF71;  /* The lighter, brighter gold you requested */
+
+  /* --- TEXT --- */
+  /* Light Cream/Off-White (For contrast against dark backgrounds) */
+  --color-cream-50: #F9F6F0; /* Main Text Color */
+  --color-cream-200: #E6DCCF; /* Muted Text Color */
+}
