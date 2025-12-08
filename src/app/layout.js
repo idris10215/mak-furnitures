@@ -1,4 +1,4 @@
-import { Inter, Merriweather } from "next/font/google";
+import { Inter, Merriweather, Cinzel as CinzelFont, Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
@@ -17,6 +17,21 @@ const merriweather = Merriweather({
   display: 'swap',
 });
 
+// 3. Configure the Royal Font (Cinzel)
+const cinzel = CinzelFont({
+  weight: ['400', '700'],
+  subsets: ["latin"],
+  variable: '--font-cinzel',
+  display: 'swap',
+});
+
+// 4. Configure Roboto Slab (For Hero Text)
+const robotoSlab = Roboto_Slab({
+  subsets: ["latin"],
+  variable: '--font-roboto-slab',
+  display: 'swap',
+});
+
 export const metadata = {
   title: "MAK Furnitures | Bangalore's Custom Craft",
   description: "Premium handcrafted custom furniture in Bangalore.",
@@ -26,7 +41,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       {/* Updated background to use the new brown variable */}
-      <body className={`${inter.variable} ${merriweather.variable} bg-(--color-brown-900) text-(--color-cream-50) antialiased`}>
+      <body className={`${inter.variable} ${merriweather.variable} ${cinzel.variable} ${robotoSlab.variable} bg-(--color-brown-900) text-(--color-cream-50) antialiased`}>
         <Navbar />
         {children}
       </body>
