@@ -6,10 +6,10 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-black text-white pt-24 pb-12 border-t border-white/10">
+    <footer id="contact" className="bg-black text-white pt-16 pb-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6">
         
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
             
             {/* BRAND */}
             <div className="space-y-6">
@@ -28,25 +28,15 @@ export default function Footer() {
                 </div>
             </div>
 
-            {/* QUICK LINKS */}
-            <div>
-                <h4 className="font-(--font-merriweather) font-bold text-lg mb-6 text-(--color-cream-50)">Explore</h4>
-                <ul className="space-y-4 font-(--font-inter) text-gray-400 text-sm">
-                    <li><Link href="/" className="hover:text-(--color-cognac-default) transition-colors">Home</Link></li>
-                    <li><Link href="/products" className="hover:text-(--color-cognac-default) transition-colors">All Products</Link></li>
-                    <li><Link href="/customization" className="hover:text-(--color-cognac-default) transition-colors">Customization Process</Link></li>
-                    <li><Link href="/portfolio" className="hover:text-(--color-cognac-default) transition-colors">Portfolio</Link></li>
-                </ul>
-             </div>
-
              {/* COLLECTIONS */}
              <div>
                 <h4 className="font-(--font-merriweather) font-bold text-lg mb-6 text-(--color-cream-50)">Collections</h4>
                 <ul className="space-y-4 font-(--font-inter) text-gray-400 text-sm">
                     <li><Link href="/category/sofas" className="hover:text-(--color-cognac-default) transition-colors">Sofas & Sectionals</Link></li>
+                    <li><Link href="/category/bedroom" className="hover:text-(--color-cognac-default) transition-colors">Luxury Beds</Link></li>
+                    <li><Link href="/category/dining" className="hover:text-(--color-cognac-default) transition-colors">Dining Series</Link></li>
+                    <li><Link href="/category/recliners" className="hover:text-(--color-cognac-default) transition-colors">Recliners</Link></li>
                     <li><Link href="/category/chairs" className="hover:text-(--color-cognac-default) transition-colors">Accent Chairs</Link></li>
-                    <li><Link href="/category/beds" className="hover:text-(--color-cognac-default) transition-colors">Luxury Beds</Link></li>
-                    <li><Link href="/category/wardrobes" className="hover:text-(--color-cognac-default) transition-colors">Wardrobes</Link></li>
                 </ul>
              </div>
 

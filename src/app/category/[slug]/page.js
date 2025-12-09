@@ -1,83 +1,137 @@
-import Link from 'next/link';
+'use client';
+
+import { useParams } from 'next/navigation';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import { categories } from '@/data/categories';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ChevronLeft } from 'lucide-react';
 
-export function generateStaticParams() {
-  return categories.map((category) => ({
-    slug: category.slug,
-  }));
-}
+// Dummy Data Database
+const categoryData = {
+  sofas: {
+    title: 'Sofas & Sectionals',
+    subtypes: [
+      { id: 'l-shaped', name: 'L-Shaped Sectionals', image: '/image1.png' },
+      { id: '3-seater', name: '3-Seater Sofas', image: '/image1.png' },
+      { id: '2-seater', name: '2-Seater Loveseats', image: '/image1.png' },
+      { id: 'recliner-sofas', name: 'Recliner Sofas', image: '/image5.png' },
+      { id: 'sofa-cum-bed', name: 'Sofa Cum Beds', image: '/image1.png' },
+    ]
+  },
+  bedroom: {
+    title: 'Bedroom Collection',
+    subtypes: [
+      { id: 'king-beds', name: 'King Size Beds', image: '/image3.png' },
+      { id: 'queen-beds', name: 'Queen Size Beds', image: '/image3.png' },
+      { id: 'storage-beds', name: 'Hydraulic Storage Beds', image: '/image3.png' },
+      { id: 'upholstered', name: 'Upholstered Beds', image: '/image2.png' },
+    ]
+  },
+  dining: {
+    title: 'Dining',
+    subtypes: [
+      { id: '6-seater', name: '6-Seater Sets', image: '/image2.png' },
+      { id: '4-seater', name: '4-Seater Sets', image: '/image2.png' },
+      { id: 'round-tables', name: 'Round Dining Tables', image: '/image4.jpg' },
+      { id: 'marble-top', name: 'Marble Top Dining', image: '/image4.jpg' },
+    ]
+  },
+  recliners: {
+    title: 'Recliners',
+    subtypes: [
+      { id: 'single-seater', name: 'Single Seaters', image: '/image5.png' },
+      { id: 'motorized', name: 'Motorized Recliners', image: '/image5.png' },
+      { id: 'manual', name: 'Manual Recliners', image: '/image5.png' },
+    ]
+  },
+  chairs: {
+    title: 'Accent Chairs',
+    subtypes: [
+      { id: 'wing-chairs', name: 'Wingback Chairs', image: '/image1.png' },
+      { id: 'lounge-chairs', name: 'Lounge Chairs', image: '/image1.png' },
+      { id: 'arm-chairs', name: 'Arm Chairs', image: '/image1.png' },
+      { id: 'benches', name: 'Benches & Ottomans', image: '/image1.png' },
+    ]
+  }
+};
 
-export default async function CategoryPage({ params }) {
-    const { slug } = await params;
-    const category = categories.find((c) => c.slug === slug);
+export default function CategoryPage() {
+  const params = useParams();
+  const slug = params.slug; 
+  const data = categoryData[slug];
 
-    if (!category) {
-        notFound();
-    }
-
+  if (!data) {
     return (
-        <main className="min-h-screen bg-(--color-brown-900) text-(--color-cream-50)">
-            
-            {/* Header Hero */}
-            <div className="relative h-[60vh] w-full flex items-center justify-center">
-                <Image
-                    src={category.image}
-                    alt={category.title}
-                    fill
-                    className="object-cover opacity-50"
-                />
-                <div className="absolute inset-0 bg-black/60" />
-                
-                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-                    <h1 className="font-(--font-merriweather) text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl">
-                        {category.title}
-                    </h1>
-                    <p className="font-(--font-inter) text-xl text-gray-200">
-                        {category.description}
-                    </p>
-                </div>
-            </div>
-
-            {/* Breadcrumb / Back */}
-            <div className="max-w-7xl mx-auto px-6 py-8">
-                 <Link href="/" className="inline-flex items-center text-(--color-cognac-default) hover:text-(--color-cream-50) transition-colors font-(--font-inter) font-bold text-sm tracking-widest uppercase">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 mr-2">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                    </svg>
-                    Back to Collections
-                 </Link>
-            </div>
-
-            {/* Subcategories Grid */}
-            <section className="max-w-7xl mx-auto px-6 pb-40">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {category.subcategories.map((sub) => (
-                        <div key={sub.id} className="group cursor-pointer">
-                            <div className="relative h-[400px] w-full mb-6 rounded-2xl overflow-hidden shadow-lg border border-(--color-cream-50)/10">
-                                <Image
-                                    src={sub.image}
-                                    alt={sub.title}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
-                            </div>
-                            <h3 className="font-(--font-merriweather) text-2xl font-bold text-white mb-2 group-hover:text-(--color-cognac-default) transition-colors">
-                                {sub.title}
-                            </h3>
-                            <p className="text-gray-400 text-sm font-(--font-inter)">
-                                View Collection →
-                            </p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            <Footer />
-        </main>
+      <div className="min-h-screen bg-(--color-brown-900) flex items-center justify-center text-white">
+        <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4">Category Not Found</h1>
+            <Link href="/" className="text-(--color-gold-default) hover:underline">Return Home</Link>
+        </div>
+      </div>
     );
+  }
+
+  return (
+    <main className="min-h-screen bg-(--color-brown-900) text-(--color-cream-50) pb-24 relative">
+      
+      {/* Fixed Back Button */}
+      <Link 
+        href="/#categories" 
+        className="fixed top-24 left-6 z-50 flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 hover:bg-(--color-gold-default) hover:text-(--color-brown-900) transition-colors group"
+      >
+        <ChevronLeft className="w-5 h-5" />
+        <span className="hidden md:inline font-bold uppercase tracking-widest text-sm">Back</span>
+      </Link>
+
+      {/* Hero Header */}
+      <section className="pt-32 pb-12 px-6 max-w-7xl mx-auto">
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8"
+        >
+          <div>
+            <span className="text-(--color-cognac-default) font-bold tracking-widest uppercase text-lg mb-2 block">
+              Collection
+            </span>
+            <h1 className="font-(--font-merriweather) text-4xl md:text-6xl font-bold capitalize text-left">
+              {data.title}
+            </h1>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Sub-types Grid */}
+      <section className="px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {data.subtypes.map((subtype, index) => (
+            <motion.div
+                key={subtype.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+            >
+                <div 
+                    className="group block cursor-default"
+                >
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 mb-4 text-center">
+                    <Image
+                        src={subtype.image}
+                        alt={subtype.name}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Dark overlay on hover */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                </div>
+                <h3 className="text-xl font-bold font-(--font-merriweather) group-hover:text-(--color-gold-default) transition-colors">
+                    {subtype.name}
+                </h3>
+                </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
 }

@@ -24,10 +24,10 @@ const categories = [
   {
     id: 'living-room',
     title: 'Sofas',
-    description: 'The heart of your home. Sectionals & Center Tables.',
+    description: 'The heart of your home.',
     image: '/image1.png', 
-    link: '/category/living-room',
-    desktopClass: 'col-span-2 row-span-2',
+    link: '/category/sofas',
+    desktopClass: 'col-span-2 row-span-1',
   },
   {
     id: 'bedroom',
@@ -60,32 +60,16 @@ const categories = [
     image: '/image1.png', 
     link: '/category/chairs',
     desktopClass: 'col-span-1 row-span-1',
-  },
-  {
-    id: 'wardrobes',
-    title: 'Wardrobes',
-    description: 'Organized luxury.',
-    image: '/image4.jpg', 
-    link: '/category/wardrobes',
-    desktopClass: 'col-span-1 row-span-1',
-  },
-  {
-    id: 'all-collections',
-    title: 'Explore All',
-    description: 'Discover our complete catalog.',
-    image: '/image2.png', 
-    link: '/products',
-    desktopClass: 'col-span-1 row-span-1',
-  },
+  }
 ];
 
 export default function CategoryGrid() {
   return (
-    <section id="categories" className="pt-12 pb-24 bg-(--color-brown-900) text-(--color-cream-50)">
+    <section id="categories" className="pt-12 pb-12 bg-(--color-brown-900) text-(--color-cream-50)">
       <div className="max-w-7xl mx-auto px-6">
         
-        <div className="mb-16 text-center">
-            <span className="block text-(--color-cognac-default) font-(--font-inter) text-sm font-bold tracking-widest uppercase mb-4">
+        <div className="mb-12 text-center">
+            <span className="block text-(--color-cognac-default) font-(--font-inter) text-lg font-bold tracking-widest uppercase mb-4">
                 Our Collections
             </span>
             <h2 className="font-(--font-merriweather) text-4xl md:text-5xl font-bold">
@@ -127,14 +111,14 @@ export default function CategoryGrid() {
         </div>
 
         {/* --- MOBILE STICKY STACK (md:hidden) --- */}
-        <div className="md:hidden relative pb-24">
+        <div className="md:hidden relative pb-12">
              {categories.map((category, index) => (
                 <div 
                     key={category.id}
                     className="sticky top-20 mb-0 last:mb-0"
                     style={{ zIndex: index + 1 }}
                 >
-                    <div className="relative h-[450px] w-full rounded-3xl overflow-hidden bg-black border border-white/10 shadow-2xl">
+                    <div className="relative h-[350px] w-full rounded-3xl overflow-hidden bg-black border border-white/10 shadow-2xl">
                          <Image
                             src={category.image}
                             alt={category.title}
