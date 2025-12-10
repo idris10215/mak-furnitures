@@ -86,26 +86,9 @@ export default function HeroSection() {
               Design That <br/> Defines <span className="font-bold text-(--color-gold-default)">You.</span>
             </h1>
 
-            <p className="font-(--font-inter) text-sm sm:text-lg md:text-xl font-bold text-(--color-cream-200) max-w-xl mx-auto leading-relaxed px-4">
+            <p className="font-(--font-inter) text-lg sm:text-lg md:text-xl lg:text-3xl font-bold text-(--color-cream-200) max-w-8xl mx-auto leading-relaxed px-4">
               Experience the art of bespoke furniture. Handcrafted to perfection, designed for your lifestyle.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-6 sm:mt-8 w-full px-6">
-                <Link 
-                    href="/customization"
-                    className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-(--color-cream-50) text-(--color-brown-900) font-bold rounded-full overflow-hidden transition-transform hover:scale-105"
-                >
-                    <span className="relative z-10 group-hover:text-(--color-cream-50) transition-colors text-sm sm:text-base">Start Designing</span>
-                    <div className="absolute inset-0 bg-(--color-cognac-default) transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out" />
-                </Link>
-                
-                <Link 
-                    href="/collection"
-                    className="group px-6 sm:px-8 py-3 sm:py-4 border border-(--color-cream-50/30) text-(--color-cream-50) font-medium rounded-full hover:bg-(--color-cream-50/10) backdrop-blur-md transition-all hover:border-(--color-cream-50) text-sm sm:text-base"
-                >
-                    View Collection
-                </Link>
-            </div>
         </motion.div>
       </div>
 

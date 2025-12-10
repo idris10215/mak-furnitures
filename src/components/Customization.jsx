@@ -3,7 +3,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const steps = [
   {
@@ -11,35 +10,40 @@ const steps = [
     title: 'Wood Selection',
     subtitle: 'The Foundation of Strength',
     description: 'Choose from our premium selection of woods including Pine Wood, Neem Wood, Silver Wood, and Honne Wood. Each piece is selected for its grain, durability, and character.',
-    image: '/image1.png', 
+    imageLandscape: '/custom-wood-landscape.png',
+    imagePortrait: '/custom-wood-portrait.png', 
   },
   {
     id: 2,
     title: 'Fabric & Leather',
     subtitle: 'Touch of Elegance',
     description: 'From pristine Leather to rich velvets. We offer a curated collection of textures that define luxury without boundaries.',
-    image: '/image2.png', 
+    imageLandscape: '/fabrics-landscape.png',
+    imagePortrait: '/fabrics-portrait.png',
   },
   {
     id: 3,
     title: 'Color Palette',
     subtitle: 'Spectrum of Style',
     description: 'Explore a vast array of colors to match your personalized theme. Whether bold statements or subtle tones, the choice is yours.',
-    image: '/image3.png', 
+    imageLandscape: '/custom-colors-landscape.png',
+    imagePortrait: '/custom-colors-portrait.png', 
   },
   {
     id: 4,
     title: 'Mattresses & Comfort',
     subtitle: 'Scientific Sleep',
     description: 'Select from top-tier comfort technologies: Sleep Well, Rest Well, Duroflex, Curlon, MM, and Feather. We prioritize your rest.',
-    image: '/image4.jpg', 
+    imageLandscape: '/mattress-landscape.png',
+    imagePortrait: '/mattress-portrait.png',
   },
   {
     id: 6,
     title: 'Custom Design',
     subtitle: 'Your Vision, Our Craft',
     description: 'Have a specific design in mind? Share your sketches or ideas with us, and our artisans will bring your unique vision to life.',
-    image: '/image1.png', 
+    imageLandscape: '/custom-landscape.png',
+    imagePortrait: '/custom-portrait.png',
   },
 ];
 
@@ -87,16 +91,30 @@ function StepCard({ step, index, total }) {
         >
             <div className="relative w-full h-[500px] md:h-[550px] rounded-3xl overflow-hidden bg-black border border-(--color-cream-50)/10 shadow-2xl">
                 
-                {/* Background Image */}
-                <Image
-                    src={step.image}
-                    alt={step.title}
-                    fill
-                    className="object-cover opacity-60"
-                />
+                {/* Background Image - Landscape (Hidden on Mobile) */}
+                <div className="hidden md:block absolute inset-0">
+                    <Image
+                        src={step.imageLandscape}
+                        alt={`${step.title} Landscape`}
+                        fill
+                        className="object-cover"
+                        priority={index === 0} // prioritize first image
+                    />
+                </div>
+
+                {/* Background Image - Portrait (Hidden on Desktop) */}
+                <div className="block md:hidden absolute inset-0">
+                    <Image
+                        src={step.imagePortrait}
+                        alt={`${step.title} Portrait`}
+                        fill
+                        className="object-cover"
+                        priority={index === 0} 
+                    />
+                </div>
                 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-between p-6 md:p-16 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:bg-gradient-to-r md:from-black/80 md:via-black/40 md:to-transparent">
+                <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-between p-6 md:p-16 bg-gradient-to-t from-black/80 to-transparent md:bg-gradient-to-r md:from-black/80 md:to-transparent">
                     
                     <div className="w-full md:w-1/2 space-y-4 md:space-y-6 mt-auto md:mt-0 pb-6 md:pb-0">
                         <div className="flex items-center gap-3 md:gap-4 text-(--color-gold-default)">
