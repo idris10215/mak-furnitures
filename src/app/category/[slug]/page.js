@@ -1,6 +1,6 @@
 'use client';
 
-import { useParams } from 'next/navigation';
+import { use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -11,11 +11,14 @@ const categoryData = {
   sofas: {
     title: 'Sofas & Sectionals',
     subtypes: [
-      { id: 'l-shaped', name: 'L-Shaped Sectionals', image: '/image1.png' },
-      { id: '3-seater', name: '3-Seater Sofas', image: '/image1.png' },
-      { id: '2-seater', name: '2-Seater Loveseats', image: '/image1.png' },
-      { id: 'recliner-sofas', name: 'Recliner Sofas', image: '/image5.png' },
-      { id: 'sofa-cum-bed', name: 'Sofa Cum Beds', image: '/image1.png' },
+      { id: '3-seater', name: '3-Seater Sofas', image: '/3.png' },
+      { id: '2-seater', name: '2-Seater Sofas', image: '/2-wide.png' },
+      { id: '3-2-seater', name: '3-seater + 2-seater Sofas', image: '/3+2.png '},
+      { id: '2-1-seater', name: '2-seater + 1-seater Sofas', image: '/2+1.png' },
+      { id: 'custom-seater', name: 'Custom seater Sofas', image: '/royal-3.png' },
+      {id: 'L-shaped', name:'L-shaped Sofas', image:'/L-shaped.png'},
+      {id: 'L-shaped-custom', name:'L-shaped custom Sofas', image:'/L-custom.png'},
+      {id: 'custom', name:'Custom designed Sofas', image:'/custom.png'},
     ]
   },
   bedroom: {
@@ -30,10 +33,9 @@ const categoryData = {
   dining: {
     title: 'Dining',
     subtypes: [
-      { id: '6-seater', name: '6-Seater Sets', image: '/image2.png' },
-      { id: '4-seater', name: '4-Seater Sets', image: '/image2.png' },
-      { id: 'round-tables', name: 'Round Dining Tables', image: '/image4.jpg' },
-      { id: 'marble-top', name: 'Marble Top Dining', image: '/image4.jpg' },
+      { id: '6-seater', name: '6-Seater Sets', image: '/dining-6-seater.png' },
+      { id: '4-seater', name: '4-Seater Sets', image: '/dining-4-seater.png' },
+      { id: 'round-tables', name: 'Round Dining Tables', image: '/dining-round.png' },
     ]
   },
   recliners: {
@@ -55,9 +57,11 @@ const categoryData = {
   }
 };
 
-export default function CategoryPage() {
-  const params = useParams();
-  const slug = params.slug; 
+export default function CategoryPage({ params }) {
+  const unwrappedParams = use(params);
+  const slug = unwrappedParams.slug; 
+  console.log('Category Page Debug:', { slug, availableCategories: Object.keys(categoryData) });
+  
   const data = categoryData[slug];
 
   if (!data) {
@@ -103,7 +107,7 @@ export default function CategoryPage() {
 
       {/* Sub-types Grid */}
       <section className="px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {data.subtypes.map((subtype, index) => (
             <motion.div
                 key={subtype.id}
