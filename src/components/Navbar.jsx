@@ -81,13 +81,14 @@ export default function Navbar() {
           
           {/* Desktop Contact Button */}
           <div className="hidden md:block">
-            <Link 
-                href="/#contact" 
-                onClick={(e) => handleNavClick(e, 'contact')}
+            <a 
+                href="https://wa.me/919036979144?text=Hello%20I%20am%20interested%20in%20your%20furniture" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-2 bg-(--color-cognac-default) text-white rounded-full hover:bg-(--color-cognac-light) transition-colors shadow-md font-bold"
             >
               Contact
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Toggle Button */}
@@ -142,13 +143,14 @@ export default function Navbar() {
             >
               Why Us
             </Link>
-            <Link 
-              href="/#contact" 
-              onClick={(e) => handleNavClick(e, 'contact')}
+            <a 
+              href="https://wa.me/919036979144?text=Hello%20I%20am%20interested%20in%20your%20furniture"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-4 px-6 py-3 bg-(--color-cognac-default) text-white rounded-full hover:bg-(--color-cognac-light) transition-colors shadow-md font-medium"
             >
               Contact Us
-            </Link>
+            </a>
           </nav>
         </div>
       )}

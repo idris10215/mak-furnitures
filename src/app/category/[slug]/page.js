@@ -24,35 +24,39 @@ const categoryData = {
   bedroom: {
     title: 'Bedroom Collection',
     subtypes: [
-      { id: 'king-beds', name: 'King Size Beds', image: '/image3.png' },
-      { id: 'queen-beds', name: 'Queen Size Beds', image: '/image3.png' },
-      { id: 'storage-beds', name: 'Hydraulic Storage Beds', image: '/image3.png' },
-      { id: 'upholstered', name: 'Upholstered Beds', image: '/image2.png' },
+      { id: 'modern-upholstered-bed', name: 'Modern upholstered beds', image: '/modern-upholstered-bed.png' },
+      { id: 'modern-upholstered-bed-with-footboard', name: 'Modern upholstered beds with footboard', image: '/modern-upholstered-bed-with-footboard.png' },
+      { id: 'upholstered-luxury-bed', name: 'Upholstered luxury beds', image: '/upholstered-luxury-bed.png' },
+      { id: 'sofa-cum-bed', name: 'Sofa cum beds', image: '/sofa-cum-bed.png' },
+      { id: 'l-shaped-sofa-cum-bed-with-storage', name: 'L-shaped sofa cum beds with storage', image: '/l-shaped-sofa-cum-bed-with-storage.png' },
     ]
   },
   dining: {
     title: 'Dining',
     subtypes: [
-      { id: '6-seater', name: '6-Seater Sets', image: '/dining-6-seater.png' },
-      { id: '4-seater', name: '4-Seater Sets', image: '/dining-4-seater.png' },
-      { id: 'round-tables', name: 'Round Dining Tables', image: '/dining-round.png' },
+      { id: '6-seater', name: '6-Seater Sets', image: '/6-seater-dining.png' },
+      { id: '4-seater', name: '4-Seater Sets', image: '/4-seater-dining.png' },
+      { id: 'round-tables', name: 'Round Dining Tables', image: '/round-dining.png' },
     ]
   },
   recliners: {
     title: 'Recliners',
     subtypes: [
-      { id: 'single-seater', name: 'Single Seaters', image: '/image5.png' },
-      { id: 'motorized', name: 'Motorized Recliners', image: '/image5.png' },
-      { id: 'manual', name: 'Manual Recliners', image: '/image5.png' },
+      { id: 'single-seater', name: 'Single Seaters', image: '/1-seater-recliner.png' },
+      { id: '2-seater', name: '2 Seater Recliners', image: '/2-seater-recliner.png' },
+      { id: '3-seater', name: '3 Seater Recliners', image: '/3-seater-recliner.png' },
     ]
   },
   chairs: {
     title: 'Accent Chairs',
     subtypes: [
-      { id: 'wing-chairs', name: 'Wingback Chairs', image: '/image1.png' },
-      { id: 'lounge-chairs', name: 'Lounge Chairs', image: '/image1.png' },
-      { id: 'arm-chairs', name: 'Arm Chairs', image: '/image1.png' },
-      { id: 'benches', name: 'Benches & Ottomans', image: '/image1.png' },
+      { id: 'sofa-chair', name: 'Sofa Chairs', image: '/sofa-chair.png' },
+      { id: 'chair-with-ottoman', name: 'Chair with Ottoman', image: '/chair-with-ottomon.png' },
+      { id: 'upholstered-chair', name: 'Upholstered Chairs', image: '/upholstered-chair.png' },
+      { id: 'luxury-sofa-chairs', name: 'Luxury Sofa Chairs', image: '/luxury-sofa-chair.png' },
+      { id: '2-chairs-with-ottomon', name: '2 Chairs set with Ottoman', image: '/2-chairs-with-ottomon.png' },
+      { id: 'rocking-chair', name: 'Rocking Chairs', image: '/rocking-chair-with-ottomon.png' },
+      { id: 'custom-chair', name: 'Custom designed Chairs', image: '/custom-designed-chairs.png' },
     ]
   }
 };
@@ -107,7 +111,7 @@ export default function CategoryPage({ params }) {
 
       {/* Sub-types Grid */}
       <section className="px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {data.subtypes.map((subtype, index) => (
             <motion.div
                 key={subtype.id}

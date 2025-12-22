@@ -16,7 +16,7 @@ const features = [
     },
     {
         icon: <Sparkles className="w-8 h-8" />,
-        title: "10+ Years Mastery",
+        title: "20+ Years Mastery",
         description: "A decade of expertise"
     },
     {
