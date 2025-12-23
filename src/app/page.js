@@ -7,6 +7,15 @@ import Footer from '@/components/Footer';
 import Portfolio from '@/components/Portfolio';
 
 export default function Home() {
+  const specificIndices = [1, 6, 21, 35];
+  
+  const projects = specificIndices.map((index) => ({
+    id: index,
+    title: `Custom Project`,
+    image: `/p${index}.png`,
+    description: 'Bespoke custom furniture',
+  }));
+
   return (
     <main className="min-h-screen bg-(--color-brown-900)">
       <HeroSection />
@@ -18,7 +27,7 @@ export default function Home() {
       <CategoryGrid />
       
       {/* Portfolio Section */}
-      <Portfolio />
+      <Portfolio projects={projects} />
 
       {/* Trust/Why Choose Us Section */}
       <WhyChooseUs />

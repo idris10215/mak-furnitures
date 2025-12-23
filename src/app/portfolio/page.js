@@ -5,18 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronLeft } from 'lucide-react';
 
-// Dummy Portfolio Data (Using requested placeholders)
-const portfolioItems = [
-  { id: 1, image: '/image1.png', size: 'large' },
-  { id: 2, image: '/image2.png', size: 'small' },
-  { id: 3, image: '/image1.png', size: 'small' },
-  { id: 4, image: '/image2.png', size: 'large' },
-  { id: 5, image: '/image1.png', size: 'small' },
-  { id: 6, image: '/image2.png', size: 'small' },
-  { id: 7, image: '/image1.png', size: 'large' },
-  { id: 8, image: '/image2.png', size: 'small' },
-  { id: 9, image: '/image1.png', size: 'small' },
-];
+
 
 
 
@@ -50,30 +39,34 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Grid Gallery */}
+      {/* Masonry Gallery */}
       <section className="px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-dense">
-          {portfolioItems.map((item, index) => (
-             <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 group
-                ${item.size === 'large' ? 'aspect-[3/4] md:row-span-2' : 'aspect-square'}
-              `}
-            >
-              <Image
-                src={item.image}
-                alt={`Portfolio Item ${item.id}`}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              {/* No Text Overlay as requested */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-            </motion.div>
-          ))}
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+          {Array.from({ length: 36 }).map((_, index) => {
+            const id = index + 1;
+            return (
+              <motion.div
+                key={id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: (index % 3) * 0.1 }} // Stagger based on column position approx
+                viewport={{ once: true }}
+                className="break-inside-avoid relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 group mb-6"
+              >
+                <div className="relative w-full">
+                  <Image
+                    src={`/p${id}.png`}
+                    alt={`Portfolio Item ${id}`}
+                    width={800}
+                    height={1000} // Aspect ratio will be natural, mostly purely for next/image optimization
+                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 

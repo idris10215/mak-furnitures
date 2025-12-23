@@ -3,7 +3,7 @@
 import { use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+
 import { ChevronLeft } from 'lucide-react';
 
 // Dummy Data Database
@@ -18,6 +18,7 @@ const categoryData = {
       { id: 'custom-seater', name: 'Custom seater Sofas', image: '/royal-3.png' },
       {id: 'L-shaped', name:'L-shaped Sofas', image:'/L-shaped.png'},
       {id: 'L-shaped-custom', name:'L-shaped custom Sofas', image:'/L-custom.png'},
+      {id: '3-seater-sofa-with-extendable-footrest', name:'3 seater Sofa with extendable footrest', image:'/3-seater-recliner-sofa-with-extendable-footrest.png'},
       {id: 'custom', name:'Custom designed Sofas', image:'/custom.png'},
     ]
   },
@@ -93,9 +94,7 @@ export default function CategoryPage({ params }) {
 
       {/* Hero Header */}
       <section className="pt-32 pb-12 px-6 max-w-7xl mx-auto">
-        <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+        <div 
             className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8"
         >
           <div>
@@ -106,18 +105,15 @@ export default function CategoryPage({ params }) {
               {data.title}
             </h1>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Sub-types Grid */}
       <section className="px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {data.subtypes.map((subtype, index) => (
-            <motion.div
+            <div
                 key={subtype.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
             >
                 <div 
                     className="group block cursor-default"
@@ -136,7 +132,7 @@ export default function CategoryPage({ params }) {
                     {subtype.name}
                 </h3>
                 </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
