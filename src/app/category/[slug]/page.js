@@ -15,7 +15,7 @@ const categoryData = {
       { id: '2-seater', name: '2-Seater Sofas', image: '/2-wide.png' },
       { id: '3-2-seater', name: '3-seater + 2-seater Sofas', image: '/3+2.png '},
       { id: '2-1-seater', name: '2-seater + 1-seater Sofas', image: '/2+1.png' },
-      { id: 'custom-seater', name: 'Custom seater Sofas', image: '/royal-3.png' },
+      { id: 'luxury-seater', name: 'Luxury seater Sofas', image: '/royal-3.png' },
       {id: 'L-shaped', name:'L-shaped Sofas', image:'/L-shaped.png'},
       {id: 'L-shaped-custom', name:'L-shaped custom Sofas', image:'/L-custom.png'},
       {id: '3-seater-sofa-with-extendable-footrest', name:'3 seater Sofa with extendable footrest', image:'/3-seater-recliner-sofa-with-extendable-footrest.png'},
@@ -28,7 +28,7 @@ const categoryData = {
       { id: 'modern-upholstered-bed', name: 'Modern upholstered beds', image: '/modern-upholstered-bed.png' },
       { id: 'modern-upholstered-bed-with-footboard', name: 'Modern upholstered beds with footboard', image: '/modern-upholstered-bed-with-footboard.png' },
       { id: 'upholstered-luxury-bed', name: 'Upholstered luxury beds', image: '/upholstered-luxury-bed.png' },
-      { id: 'sofa-cum-bed', name: 'Sofa cum beds', image: '/sofa-cum-bed.png' },
+      { id: 'sofa-cum-bed', name: 'Sofa cum beds', image: '/sofa-cum-bed-v2.png' },
       { id: 'l-shaped-sofa-cum-bed-with-storage', name: 'L-shaped sofa cum beds with storage', image: '/l-shaped-sofa-cum-bed-with-storage.png' },
     ]
   },
@@ -57,7 +57,7 @@ const categoryData = {
       { id: 'luxury-sofa-chairs', name: 'Luxury Sofa Chairs', image: '/luxury-sofa-chair.png' },
       { id: '2-chairs-with-ottomon', name: '2 Chairs set with Ottoman', image: '/2-chairs-with-ottomon.png' },
       { id: 'rocking-chair', name: 'Rocking Chairs', image: '/rocking-chair-with-ottomon.png' },
-      { id: 'custom-chair', name: 'Custom designed Chairs', image: '/custom-designed-chairs.png' },
+      { id: 'custom-chair', name: 'Custom designed Chairs', image: '/custom-designed-chairs-v2.png' },
     ]
   }
 };

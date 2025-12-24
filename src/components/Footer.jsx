@@ -44,7 +44,7 @@ export default function Footer() {
              <div>
                 <h4 className="font-(--font-merriweather) font-bold text-lg mb-6 text-(--color-cream-50)">Contact Us</h4>
                 <ul className="space-y-4 font-(--font-inter) text-gray-400 text-sm">
-                    <li>Bangalore, India</li>
+                    <li>Sadiq Uqba Masjid Road, opp. Masjid E Sadiq, Ashwath Nagar, Bengaluru, Karnataka 560077</li>
                     {/* <li>+91 98765 43210</li> */}
                     <li>furnituresmak@gmail.com</li>
                 </ul>
