@@ -44,9 +44,25 @@ export default function Footer() {
              <div>
                 <h4 className="font-(--font-merriweather) font-bold text-lg mb-6 text-(--color-cream-50)">Contact Us</h4>
                 <ul className="space-y-4 font-(--font-inter) text-gray-400 text-sm">
-                    <li>Sadiq Uqba Masjid Road, opp. Masjid E Sadiq, Ashwath Nagar, Bengaluru, Karnataka 560077</li>
+                    <li>
+                        <a 
+                            href="https://maps.app.goo.gl/boe42HYCxibbPqhH7?g_st=aw" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="hover:text-white transition-colors"
+                        >
+                            Sadiq Uqba Masjid Road, opp. Masjid E Sadiq, Ashwath Nagar, Bengaluru, Karnataka 560077
+                        </a>
+                    </li>
                     {/* <li>+91 98765 43210</li> */}
-                    <li>furnituresmak@gmail.com</li>
+                    <li>
+                        <a 
+                            href="mailto:furnituresmak@gmail.com"
+                            className="hover:text-white transition-colors"
+                        >
+                            furnituresmak@gmail.com
+                        </a>
+                    </li>
                 </ul>
              </div>
 

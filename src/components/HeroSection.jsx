@@ -89,6 +89,17 @@ export default function HeroSection() {
             <p className="font-(--font-inter) text-xl sm:text-2xl md:text-xl lg:text-3xl font-bold text-(--color-cream-200) max-w-8xl mx-auto leading-relaxed px-4">
               Experience the art of bespoke furniture. Handcrafted to perfection, designed for your lifestyle.
             </p>
+
+            <div className="pt-8">
+              <a 
+                href="https://wa.me/919845603386?text=Hello%20I%20am%20interested%20in%20your%20furniture" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-4 bg-(--color-cognac-default) text-white rounded-full hover:bg-(--color-cognac-light) transition-colors shadow-lg font-bold text-lg tracking-wide hover:scale-105 transform duration-300"
+              >
+                Contact Us
+              </a>
+            </div>
         </motion.div>
       </div>
 
