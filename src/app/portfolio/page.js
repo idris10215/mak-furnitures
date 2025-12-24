@@ -24,7 +24,7 @@ export default function PortfolioPage() {
       
       {/* Hero Header */}
       <section className="pt-32 pb-12 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-6 border-b border-white/10 pb-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8">
           <div>
             <span className="text-(--color-cognac-default) font-bold tracking-widest uppercase text-lg mb-2 block">
               Our Masterpieces

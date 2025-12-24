@@ -18,7 +18,7 @@ export default function HeroSection() {
   const yForeground = useTransform(scrollYProgress, [0, 1], ['0%', '-10%']); // Foreground moves up slightly
 
   return (
-    <section ref={containerRef} className="relative w-full h-[120vh] -mt-24 overflow-hidden bg-(--color-brown-900)">
+    <section ref={containerRef} className="relative w-full h-screen md:h-[120vh] -mt-24 overflow-hidden bg-(--color-brown-900)">
       
       {/* 1. LAYER - BACKGROUND VISUAL */}
       <motion.div 
@@ -82,11 +82,11 @@ export default function HeroSection() {
                 EST. 2003 • BANGALORE
             </span>
             
-            <h1 className="font-(--font-roboto-slab) text-4xl sm:text-4xl font-bold md:text-6xl lg:text-7xl leading-tight text-(--color-cream-50) drop-shadow-2xl">
+            <h1 className="font-(--font-roboto-slab) text-5xl sm:text-6xl font-bold md:text-6xl lg:text-7xl leading-tight text-(--color-cream-50) drop-shadow-2xl">
               Design That <br/> Defines <span className="font-bold text-(--color-gold-default)">You.</span>
             </h1>
 
-            <p className="font-(--font-inter) text-lg sm:text-lg md:text-xl lg:text-3xl font-bold text-(--color-cream-200) max-w-8xl mx-auto leading-relaxed px-4">
+            <p className="font-(--font-inter) text-xl sm:text-2xl md:text-xl lg:text-3xl font-bold text-(--color-cream-200) max-w-8xl mx-auto leading-relaxed px-4">
               Experience the art of bespoke furniture. Handcrafted to perfection, designed for your lifestyle.
             </p>
         </motion.div>
