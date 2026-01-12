@@ -59,6 +59,27 @@ const categoryData = {
   }
 };
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const data = categoryData[slug];
+
+  if (!data) {
+    return {
+      title: 'Category Not Found | MAK Enterprises',
+    };
+  }
+
+  return {
+    title: `${data.title} | MAK Enterprises`,
+    description: `Explore our exclusive collection of ${data.title.toLowerCase()}. Handcrafted in Bangalore by MAK Enterprises.`,
+    openGraph: {
+      title: `${data.title} | MAK Enterprises`,
+      description: `Premium ${data.title.toLowerCase()} customized to your style.`,
+      images: [data.subtypes[0]?.image || '/image2.png'],
+    },
+  };
+}
+
 export function generateStaticParams() {
   return Object.keys(categoryData).map((slug) => ({
     slug,
