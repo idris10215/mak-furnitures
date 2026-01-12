@@ -25,6 +25,12 @@
   /* Light Cream/Off-White (For contrast against dark backgrounds) */
   --color-cream-50: #F9F6F0; /* Main Text Color */
   --color-cream-200: #E6DCCF; /* Muted Text Color */
+
+  /* --- FONTS --- */
+  --font-inter: 'Inter', sans-serif;
+  --font-merriweather: 'Merriweather', serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-roboto-slab: 'Roboto Slab', serif;
 }
 
 /* --- SWIPER OVERRIDES --- */

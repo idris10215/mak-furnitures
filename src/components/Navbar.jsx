@@ -40,7 +40,7 @@ export default function Navbar() {
         {/* --- COLUMN 1: LEFT (Logo) --- */}
         <div className="flex-1 flex justify-start">
           <Link href="/" className=" font-(--font-cinzel) font-bold text-(--color-cream-50) shrink-0 text-lg md:text-2xl transition-all z-10 tracking-widest">
-            MAK Furnitures
+            MAK Enterprises
           </Link>
         </div>
 

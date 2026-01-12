@@ -1,6 +1,3 @@
-'use client';
-
-import { use } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -62,9 +59,14 @@ const categoryData = {
   }
 };
 
-export default function CategoryPage({ params }) {
-  const unwrappedParams = use(params);
-  const slug = unwrappedParams.slug; 
+export function generateStaticParams() {
+  return Object.keys(categoryData).map((slug) => ({
+    slug,
+  }));
+}
+
+export default async function CategoryPage({ params }) {
+  const { slug } = await params; 
   console.log('Category Page Debug:', { slug, availableCategories: Object.keys(categoryData) });
   
   const data = categoryData[slug];
