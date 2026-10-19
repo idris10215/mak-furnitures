@@ -83,13 +83,13 @@ export default function CategoryGrid() {
                 <Link 
                     key={category.id} 
                     href={category.link}
-                    className={`group relative rounded-3xl overflow-hidden shadow-lg border border-white/5 ${category.desktopClass}`}
+                    className={`group relative rounded-none overflow-hidden shadow-lg border border-white/10 ${category.desktopClass}`}
                 >
                     <Image
                         src={category.image}
                         alt={category.title}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-50"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-70 group-hover:opacity-50"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />
                     
@@ -118,7 +118,7 @@ export default function CategoryGrid() {
                     className="sticky top-20 mb-0 last:mb-0"
                     style={{ zIndex: index + 1 }}
                 >
-                    <div className="relative h-[350px] w-full rounded-3xl overflow-hidden bg-black border border-white/10 shadow-2xl">
+                    <div className="relative h-[350px] w-full rounded-none overflow-hidden bg-black border border-white/10 shadow-2xl">
                          <Image
                             src={category.image}
                             alt={category.title}
@@ -128,11 +128,8 @@ export default function CategoryGrid() {
                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
                          
                          <div className="absolute bottom-0 left-0 p-8 w-full">
-                            <h3 className="font-(--font-merriweather) text-3xl font-bold text-white mb-2">{category.title}</h3>
-                             <p className="text-(--color-cream-200) text-base font-(--font-inter)">
-                                {category.description}
-                            </p>
-                             <div className="mt-6">
+                            <h3 className="font-(--font-merriweather) text-3xl font-bold text-white mb-4">{category.title}</h3>
+                             <div>
                                 <Link href={category.link} className="inline-flex items-center gap-2 text-(--color-gold-default) font-bold uppercase tracking-widest text-sm">
                                     Explore Collection <ArrowUpRightIcon className="w-4 h-4" />
                                 </Link>

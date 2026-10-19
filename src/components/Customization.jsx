@@ -1,139 +1,217 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const steps = [
   {
     id: 1,
+    shortTitle: 'Wood',
     title: 'Wood Selection',
-    subtitle: 'The Foundation of Strength',
-    description: 'Choose from our premium selection of woods including Pine Wood, Neem Wood, Silver Wood, and Honne Wood. Each piece is selected for its grain, durability, and character.',
+    description:
+      'Choose from our premium selection of woods including Pine Wood, Neem Wood, Silver Wood, and Honne Wood. Hand-inspected for grain density, durability, and natural character.',
     imageLandscape: '/custom-wood-landscape.png',
-    imagePortrait: '/custom-wood-portrait.png', 
+    imagePortrait: '/custom-wood-portrait.png',
   },
   {
     id: 2,
+    shortTitle: 'Fabric',
     title: 'Fabric & Leather',
-    subtitle: 'Touch of Elegance',
-    description: 'From pristine Leather to rich velvets. We offer a curated collection of textures that define luxury without boundaries.',
+    description:
+      'From top-grain Italian leather to ultra-rich woven velvets and textured linens. We offer hundreds of tactile options that define enduring luxury without compromise.',
     imageLandscape: '/fabrics-landscape.png',
     imagePortrait: '/fabrics-portrait.png',
   },
   {
     id: 3,
+    shortTitle: 'Color',
     title: 'Color Palette',
-    subtitle: 'Spectrum of Style',
-    description: 'Explore a vast array of colors to match your personalized theme. Whether bold statements or subtle tones, the choice is yours.',
+    description:
+      'Explore an expansive spectrum of colors curated to complement your interior space. Whether bold statement tones or refined earthy neutrals, the palette is entirely yours.',
     imageLandscape: '/custom-colors-landscape.png',
-    imagePortrait: '/custom-colors-portrait.png', 
+    imagePortrait: '/custom-colors-portrait.png',
   },
   {
     id: 4,
+    shortTitle: 'Comfort',
     title: 'Mattresses & Comfort',
-    subtitle: 'Scientific Sleep',
-    description: 'Select from top-tier comfort technologies: Sleep Well, Rest Well, Duroflex, Curlon, MM, and Feather. We prioritize your rest.',
+    description:
+      'Engineered for ergonomic support and pressure relief. Select from certified industry leaders tailored specifically to your posture and comfort preference.',
     imageLandscape: '/mattress-landscape.png',
     imagePortrait: '/mattress-portrait.png',
   },
   {
-    id: 6,
+    id: 5,
+    shortTitle: 'Custom',
     title: 'Custom Design',
-    subtitle: 'Your Vision, Our Craft',
-    description: 'Have a specific design in mind? Share your sketches or ideas with us, and our artisans will bring your unique vision to life.',
+    description:
+      'Have an architect drawing, Pinterest inspiration, or custom room dimensions? Share your vision with our master artisans to engineer custom, one-of-a-kind furniture.',
     imageLandscape: '/custom-landscape.png',
     imagePortrait: '/custom-portrait.png',
   },
 ];
 
 export default function CustomizationProcess() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end end'],
-  });
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const activeStep = steps[activeIndex];
+
+  const handleStepChange = (newIndex) => {
+    setActiveIndex(newIndex);
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % steps.length);
+  };
 
   return (
-    <section id="process" ref={containerRef} className="relative bg-(--color-brown-900) text-(--color-cream-50)">
-      
-      {/* HEADER SECTION - Static at top */}
-      <div className="py-24 px-6 text-center">
-        <span className="block text-(--color-cognac-default) font-(--font-inter) text-sm font-bold tracking-widest uppercase mb-4">
-          The Process
-        </span>
-        <h2 className="font-(--font-merriweather) text-4xl md:text-6xl font-bold mb-6">
-          You Design. We Craft.
-        </h2>
-        <p className="max-w-2xl mx-auto text-(--color-cream-200) text-lg font-(--font-inter)">
-            Every piece involves a journey. Explore the elements you can customize to build something uniquely yours.
-        </p>
-      </div>
+    <section 
+      id="process" 
+      className="relative bg-(--color-brown-900) text-(--color-cream-50) py-16 md:py-24 border-t border-white/10"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-      {/* STICKY SCROLL CONTAINER (Unified for Mobile & Desktop) */}
-      <div className="relative max-w-7xl mx-auto px-6 pb-24 md:pb-32">
-        {steps.map((step, index) => {
-             return (
-                 <StepCard key={step.id} step={step} index={index} total={steps.length} />
-             );
-        })}
-      </div>
+        {/* --- SECTION HEADER --- */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-14 border-b border-white/10 pb-6 gap-4">
+          <div>
+            <span className="block font-(--font-inter) text-xs sm:text-sm font-bold tracking-[0.25em] text-(--color-cognac-default) uppercase mb-2">
+              The Bespoke Journey
+            </span>
+            <h2 className="font-(--font-merriweather) text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+              You Design. We Craft.
+            </h2>
+          </div>
 
-    </section>
-  );
-}
+          <p className="font-(--font-inter) text-(--color-cream-200) text-sm md:text-base max-w-md leading-relaxed">
+            Every piece is made-to-order. Explore the elements you can customize to build furniture uniquely tailored to your home.
+          </p>
+        </div>
 
-function StepCard({ step, index, total }) {
-    return (
-        <div 
-            className="sticky top-20 md:top-24 min-h-auto md:min-h-[500px] mb-0 last:mb-0"
-            style={{ zIndex: index + 1 }}
-        >
-            <div className="relative w-full h-[500px] md:h-[550px] rounded-3xl overflow-hidden bg-black border border-(--color-cream-50)/10 shadow-2xl">
-                
-                {/* Background Image - Landscape (Hidden on Mobile) */}
-                <div className="hidden md:block absolute inset-0">
-                    <Image
+        {/* --- MOBILE COMPACT HEADER BAR (< lg) --- */}
+        {/* Static indicators: left is current category badge, right is Swipe hint */}
+        <div className="lg:hidden flex items-center justify-between mb-4">
+          <div className="px-4 py-2 border border-(--color-gold-default) bg-(--color-gold-default)/15 text-(--color-gold-default) text-xs font-bold uppercase tracking-widest rounded-none select-none">
+            {activeStep.shortTitle}
+          </div>
+
+          <div className="flex items-center gap-1.5 text-xs uppercase tracking-widest text-(--color-cream-200)/80 select-none">
+            <span>Swipe</span>
+            <span className="text-sm font-mono leading-none">→</span>
+          </div>
+        </div>
+
+        {/* --- MAIN ATELIER LAYOUT --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+          {/* LEFT: DESKTOP STEP LIST (Hidden on mobile) */}
+          <div className="hidden lg:flex lg:col-span-5 flex-col space-y-1">
+            {steps.map((step, index) => {
+              const isActive = index === activeIndex;
+              return (
+                <div
+                  key={step.id}
+                  onClick={() => handleStepChange(index)}
+                  className={`w-full text-left p-5 transition-all duration-300 border-l-2 rounded-none cursor-pointer ${
+                    isActive
+                      ? 'border-(--color-gold-default) bg-white/5 pl-6'
+                      : 'border-white/10 hover:border-white/30 hover:bg-white/[0.02] pl-5'
+                  }`}
+                >
+                  <h3 className={`font-(--font-merriweather) text-xl md:text-2xl font-bold transition-colors ${
+                    isActive ? 'text-white mb-3' : 'text-(--color-cream-200)/60 hover:text-white'
+                  }`}>
+                    {step.title}
+                  </h3>
+
+                  {/* Active Step: Only ONE clean paragraph */}
+                  {isActive && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="font-(--font-inter) text-sm text-(--color-cream-200) leading-relaxed"
+                    >
+                      {step.description}
+                    </motion.p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* RIGHT: CINEMATIC VISUAL DISPLAY (Swipeable on touch/drag) */}
+          <div className="lg:col-span-7 flex flex-col">
+            
+            {/* Visual Frame with physical drag feedback */}
+            <motion.div 
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.15}
+              onDragEnd={(e, { offset }) => {
+                // Requires an actual swipe movement (> 40px)
+                if (Math.abs(offset.x) > 40) {
+                  handleNext();
+                }
+              }}
+              className="relative w-full aspect-[4/3] md:aspect-[16/11] rounded-none border border-white/15 bg-(--color-brown-900) overflow-hidden shadow-2xl select-none touch-pan-y cursor-grab active:cursor-grabbing"
+            >
+              {steps.map((step, index) => {
+                const isActive = index === activeIndex;
+                return (
+                  <motion.div
+                    key={step.id}
+                    initial={false}
+                    animate={{
+                      opacity: isActive ? 1 : 0,
+                      scale: isActive ? 1 : 1.02,
+                      zIndex: isActive ? 10 : 1,
+                    }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    className="absolute inset-0 pointer-events-none"
+                  >
+                    {/* Desktop Landscape */}
+                    <div className="hidden md:block absolute inset-0">
+                      <Image
                         src={step.imageLandscape}
                         alt={`${step.title} Landscape`}
                         fill
                         className="object-cover"
-                        priority={index === 0} // prioritize first image
-                    />
-                </div>
+                        priority={index <= 1}
+                      />
+                    </div>
 
-                {/* Background Image - Portrait (Hidden on Desktop) */}
-                <div className="block md:hidden absolute inset-0">
-                    <Image
+                    {/* Mobile Portrait */}
+                    <div className="block md:hidden absolute inset-0">
+                      <Image
                         src={step.imagePortrait}
                         alt={`${step.title} Portrait`}
                         fill
                         className="object-cover"
-                        priority={index === 0} 
-                    />
-                </div>
-                
-                {/* Content Overlay */}
-                <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-between p-6 md:p-16 bg-gradient-to-t from-black/80 to-transparent md:bg-gradient-to-r md:from-black/80 md:to-transparent">
-                    
-                    <div className="w-full md:w-1/2 space-y-4 md:space-y-6 mt-auto md:mt-0 pb-6 md:pb-0">
-                        <div className="flex items-center gap-3 md:gap-4 text-(--color-gold-default)">
-                             <span className="text-sm font-bold tracking-widest uppercase">0{index + 1} / 0{total}</span>
-                             <div className="h-[1px] w-8 md:w-12 bg-(--color-gold-default)"></div>
-                             <span className="text-sm font-bold tracking-widest uppercase">{step.title}</span>
-                        </div>
-                        
-                        <h3 className="font-(--font-merriweather) text-3xl md:text-5xl font-bold text-white leading-tight">
-                            {step.subtitle}
-                        </h3>
-                        
-                        <p className="font-(--font-inter) text-base md:text-lg text-gray-300 leading-relaxed max-w-md line-clamp-4 md:line-clamp-none">
-                            {step.description}
-                        </p>
+                        priority={index <= 1}
+                      />
                     </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
 
-                </div>
+            {/* Mobile-only Content below Image (< lg) */}
+            <div className="lg:hidden mt-4">
+              <h3 className="font-(--font-merriweather) text-xl font-bold text-white mb-2">
+                {activeStep.title}
+              </h3>
+              
+              <p className="font-(--font-inter) text-sm text-(--color-cream-200) leading-relaxed">
+                {activeStep.description}
+              </p>
             </div>
+
+          </div>
+
         </div>
-    );
+
+      </div>
+    </section>
+  );
 }

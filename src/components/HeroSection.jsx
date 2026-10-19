@@ -2,7 +2,6 @@
 
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRef } from 'react';
 
 export default function HeroSection() {
@@ -41,7 +40,7 @@ export default function HeroSection() {
         className="absolute inset-0 z-10 hidden md:flex items-center justify-center pointer-events-none select-none md:pb-32"
       >
         <span className="font-(--font-merriweather) font-black text-[12vw] md:text-[15vw] tracking-tighter text-(--color-cream-50) opacity-10 mix-blend-overlay leading-none text-center uppercase whitespace-nowrap pt-20">
-          Mak <br className="md:hidden" /> Luxury
+          Luxury
         </span>
       </motion.div>
 
@@ -57,7 +56,7 @@ export default function HeroSection() {
         <div className="relative w-full h-full">
             {/* 
                 TODO: Replace '/image4.jpg' with a transparent PNG (e.g., '/sofa-cutout.png') 
-                to see the text "MAK" appear partially behind this sofa. 
+                to see the text appear partially behind this sofa. 
             */}
            {/* Placeholder for the user to understand where the hidden text goes behind */}
            {/* <Image
@@ -70,7 +69,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* 4. LAYER - CONTENT & CTA */}
-      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center px-6 text-center">
+      <div className="absolute inset-0 z-30 flex flex-col items-center justify-center px-6 text-center pt-28 pb-8 md:pt-0 md:pb-24">
         
         <motion.div
            initial={{ opacity: 0, y: 30 }}
@@ -89,17 +88,6 @@ export default function HeroSection() {
             <p className="font-(--font-inter) text-xl sm:text-2xl md:text-xl lg:text-3xl font-bold text-(--color-cream-200) max-w-8xl mx-auto leading-relaxed px-4">
               Experience the art of bespoke furniture. Handcrafted to perfection, designed for your lifestyle.
             </p>
-
-            <div className="pt-8">
-              <a 
-                href="https://wa.me/919845603386?text=Hello%20I%20am%20interested%20in%20your%20furniture" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-4 bg-(--color-cognac-default) text-white rounded-full hover:bg-(--color-cognac-light) transition-colors shadow-lg font-bold text-lg tracking-wide hover:scale-105 transform duration-300"
-              >
-                Contact Us
-              </a>
-            </div>
         </motion.div>
       </div>
 

@@ -17,9 +17,8 @@
 
   /* Gold/Bronze Tones */
   --color-gold-default: #C4A05E; /* Your original gold */
-  /* NEW ADDITIONS BELOW */
-  --color-gold-rich: #B6771D;    /* The darker, richer bronze-gold you requested */
-  --color-gold-bright: #FFCF71;  /* The lighter, brighter gold you requested */
+  --color-gold-rich: #B6771D;    /* The darker, richer bronze-gold */
+  --color-gold-bright: #FFCF71;  /* The lighter, brighter gold */
 
   /* --- TEXT --- */
   /* Light Cream/Off-White (For contrast against dark backgrounds) */

@@ -2,27 +2,27 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
-  metadataBase: new URL('https://mak-enterprises.onrender.com'),
+  metadataBase: new URL('https://ghareeb-nawaz-enterprises.onrender.com'),
   title: {
-    default: "MAK Enterprises | Bangalore's Custom Craft",
-    template: "%s | MAK Enterprises"
+    default: "Ghareeb Nawaz Enterprises | Bangalore's Custom Craft",
+    template: "%s | Ghareeb Nawaz Enterprises"
   },
   description: "Premium handcrafted custom furniture in Bangalore. Bespoke sofas, beds, dining sets, and more. Factory-direct luxury since 2000.",
-  keywords: ['Custom Furniture Bangalore', 'Luxury Sofas', 'Bespoke Beds', 'Handcrafted Furniture', 'Interior Design Bangalore', 'MAK Enterprises'],
-  authors: [{ name: 'MAK Enterprises' }],
-  creator: 'MAK Enterprises',
-  publisher: 'MAK Enterprises',
+  keywords: ['Custom Furniture Bangalore', 'Luxury Sofas', 'Bespoke Beds', 'Handcrafted Furniture', 'Interior Design Bangalore', 'Ghareeb Nawaz Enterprises'],
+  authors: [{ name: 'Ghareeb Nawaz Enterprises' }],
+  creator: 'Ghareeb Nawaz Enterprises',
+  publisher: 'Ghareeb Nawaz Enterprises',
   openGraph: {
-    title: "MAK Enterprises | Bangalore's Custom Craft",
+    title: "Ghareeb Nawaz Enterprises | Bangalore's Custom Craft",
     description: "Premium handcrafted custom furniture in Bangalore. Experience the art of bespoke design.",
-    url: 'https://mak-enterprises.onrender.com',
-    siteName: 'MAK Enterprises',
+    url: 'https://ghareeb-nawaz-enterprises.onrender.com',
+    siteName: 'Ghareeb Nawaz Enterprises',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: "MAK Enterprises | Bangalore's Custom Craft",
+    title: "Ghareeb Nawaz Enterprises | Bangalore's Custom Craft",
     description: "Premium handcrafted custom furniture in Bangalore.",
   },
   robots: {

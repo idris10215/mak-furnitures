@@ -65,15 +65,15 @@ export async function generateMetadata({ params }) {
 
   if (!data) {
     return {
-      title: 'Category Not Found | MAK Enterprises',
+      title: 'Category Not Found | Ghareeb Nawaz Enterprises',
     };
   }
 
   return {
-    title: `${data.title} | MAK Enterprises`,
-    description: `Explore our exclusive collection of ${data.title.toLowerCase()}. Handcrafted in Bangalore by MAK Enterprises.`,
+    title: `${data.title} | Ghareeb Nawaz Enterprises`,
+    description: `Explore our exclusive collection of ${data.title.toLowerCase()}. Handcrafted in Bangalore by Ghareeb Nawaz Enterprises.`,
     openGraph: {
-      title: `${data.title} | MAK Enterprises`,
+      title: `${data.title} | Ghareeb Nawaz Enterprises`,
       description: `Premium ${data.title.toLowerCase()} customized to your style.`,
       images: [data.subtypes[0]?.image || '/image2.png'],
     },
@@ -141,12 +141,12 @@ export default async function CategoryPage({ params }) {
                 <div 
                     className="group block cursor-default"
                 >
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 mb-4 text-center">
+                <div className="relative aspect-[4/3] rounded-none overflow-hidden bg-white/5 border border-white/10 mb-4 text-center">
                     <Image
                         src={subtype.image}
                         alt={subtype.name}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     {/* Dark overlay on hover */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />

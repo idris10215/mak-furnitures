@@ -51,7 +51,7 @@ export default function PortfolioPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: (index % 3) * 0.1 }} // Stagger based on column position approx
                 viewport={{ once: true }}
-                className="break-inside-avoid relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 group mb-6"
+                className="break-inside-avoid relative rounded-none overflow-hidden bg-white/5 border border-white/10 group mb-6"
               >
                 <div className="relative w-full">
                   <Image

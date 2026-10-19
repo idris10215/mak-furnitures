@@ -32,19 +32,19 @@ export default function Portfolio({ projects = [] }) {
             </h2>
           </div>
           
-          <Link href="/portfolio" className="hidden md:inline-block border-b border-(--color-gold-default) text-(--color-gold-default) pb-1 hover:text-white hover:border-white transition-colors">
+          <Link href="/portfolio" className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-(--color-gold-default) text-(--color-gold-default) hover:bg-(--color-gold-default) hover:text-(--color-brown-900) transition-all text-sm font-medium">
              View Full Gallery →
           </Link>
         </div>
 
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
             {displayProjects.slice(0, 4).map((project) => (
-                <div key={project.id} className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 group">
+                <div key={project.id} className="relative aspect-[4/3] rounded-none overflow-hidden bg-white/5 border border-white/10 group">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                 </div>
             ))}
@@ -56,7 +56,7 @@ export default function Portfolio({ projects = [] }) {
           <div className="grid grid-cols-2 gap-4">
              {/* First Item - Full Width */}
              {displayProjects.length > 0 && (
-                <div className="col-span-2 relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+                <div className="col-span-2 relative aspect-[4/3] rounded-none overflow-hidden bg-white/5 border border-white/10">
                     <Image
                       src={displayProjects[0].image}
                       alt={displayProjects[0].title}
@@ -68,7 +68,7 @@ export default function Portfolio({ projects = [] }) {
 
              {/* Next Two Items - Half Width */}
              {displayProjects.slice(1, 3).map((project) => (
-                <div key={project.id} className="col-span-1 relative aspect-square rounded-2xl overflow-hidden bg-white/5 border border-white/10">
+                <div key={project.id} className="col-span-1 relative aspect-square rounded-none overflow-hidden bg-white/5 border border-white/10">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -80,7 +80,7 @@ export default function Portfolio({ projects = [] }) {
           </div>
 
           <div className="text-center">
-             <Link href="/portfolio" className="inline-block border-b border-(--color-gold-default) text-(--color-gold-default) pb-1 hover:text-white transition-colors">
+             <Link href="/portfolio" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-(--color-gold-default) text-(--color-gold-default) hover:bg-(--color-gold-default) hover:text-(--color-brown-900) transition-all text-sm font-bold uppercase tracking-wider">
                 View Full Gallery →
             </Link>
           </div>
