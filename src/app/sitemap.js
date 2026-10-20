@@ -1,7 +1,7 @@
 export const dynamic = 'force-static';
 
 export default function sitemap() {
-  const baseUrl = 'https://ghareeb-nawaz-enterprises.onrender.com';
+  const baseUrl = 'https://gareeb-nawaz-enterprises.onrender.com';
 
   // Static pages
   const routes = [

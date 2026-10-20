@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-20">
           <span className="block text-(--color-cognac-default) font-(--font-inter) text-xs sm:text-sm font-bold tracking-[0.25em] uppercase mb-3">
-            Why Choose Ghareeb Nawaz
+            Why Choose Gareeb Nawaz
           </span>
           <h2 className="font-(--font-merriweather) text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
             Excellence in Every Detail

@@ -7,6 +7,6 @@ export default function robots() {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://ghareeb-nawaz-enterprises.onrender.com/sitemap.xml',
+    sitemap: 'https://gareeb-nawaz-enterprises.onrender.com/sitemap.xml',
   }
 }

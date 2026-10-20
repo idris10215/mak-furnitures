@@ -2,27 +2,27 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
-  metadataBase: new URL('https://ghareeb-nawaz-enterprises.onrender.com'),
+  metadataBase: new URL('https://gareeb-nawaz-enterprises.onrender.com'),
   title: {
-    default: "Ghareeb Nawaz Enterprises | Bangalore's Custom Craft",
-    template: "%s | Ghareeb Nawaz Enterprises"
+    default: "Gareeb Nawaz Enterprises | Bangalore's Custom Craft",
+    template: "%s | Gareeb Nawaz Enterprises"
   },
   description: "Premium handcrafted custom furniture in Bangalore. Bespoke sofas, beds, dining sets, and more. Factory-direct luxury since 2000.",
-  keywords: ['Custom Furniture Bangalore', 'Luxury Sofas', 'Bespoke Beds', 'Handcrafted Furniture', 'Interior Design Bangalore', 'Ghareeb Nawaz Enterprises'],
-  authors: [{ name: 'Ghareeb Nawaz Enterprises' }],
-  creator: 'Ghareeb Nawaz Enterprises',
-  publisher: 'Ghareeb Nawaz Enterprises',
+  keywords: ['Custom Furniture Bangalore', 'Luxury Sofas', 'Bespoke Beds', 'Handcrafted Furniture', 'Interior Design Bangalore', 'Gareeb Nawaz Enterprises'],
+  authors: [{ name: 'Gareeb Nawaz Enterprises' }],
+  creator: 'Gareeb Nawaz Enterprises',
+  publisher: 'Gareeb Nawaz Enterprises',
   openGraph: {
-    title: "Ghareeb Nawaz Enterprises | Bangalore's Custom Craft",
+    title: "Gareeb Nawaz Enterprises | Bangalore's Custom Craft",
     description: "Premium handcrafted custom furniture in Bangalore. Experience the art of bespoke design.",
-    url: 'https://ghareeb-nawaz-enterprises.onrender.com',
-    siteName: 'Ghareeb Nawaz Enterprises',
+    url: 'https://gareeb-nawaz-enterprises.onrender.com',
+    siteName: 'Gareeb Nawaz Enterprises',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Ghareeb Nawaz Enterprises | Bangalore's Custom Craft",
+    title: "Gareeb Nawaz Enterprises | Bangalore's Custom Craft",
     description: "Premium handcrafted custom furniture in Bangalore.",
   },
   robots: {

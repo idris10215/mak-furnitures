@@ -14,7 +14,7 @@ export default function Footer() {
             {/* BRAND */}
             <div className="space-y-6">
                 <Link href="/" className="font-(--font-cinzel) text-2xl font-bold tracking-widest text-(--color-cream-50)">
-                    Ghareeb Nawaz Enterprises
+                    Gareeb Nawaz Enterprises
                 </Link>
                 <p className="font-(--font-inter) text-gray-400 leading-relaxed text-sm">
                     Crafting legacy pieces since 2000. Where bespoke design meets uncompromising quality.
@@ -51,16 +51,16 @@ export default function Footer() {
                             rel="noopener noreferrer"
                             className="hover:text-white transition-colors"
                         >
-                            Ghareeb Nawaz Enterprises, Sadiq Uqba Masjid Road, opp. Masjid E Sadiq, Ashwath Nagar, Bengaluru, Karnataka 560077
+                            Gareeb Nawaz Enterprises, Sadiq Uqba Masjid Road, opp. Masjid E Sadiq, Ashwath Nagar, Bengaluru, Karnataka 560077
                         </a>
                     </li>
                     {/* <li>+91 98765 43210</li> */}
                     <li>
                         <a 
-                            href="mailto:ghareebnawazenterprises@gmail.com"
+                            href="mailto:gareebnawazenterprises@gmail.com"
                             className="hover:text-white transition-colors"
                         >
-                            ghareebnawazenterprises@gmail.com
+                            gareebnawazenterprises@gmail.com
                         </a>
                     </li>
                 </ul>
@@ -70,7 +70,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-(--font-inter) text-xs text-gray-500">
-                © {currentYear} Ghareeb Nawaz Enterprises. All rights reserved.
+                © {currentYear} Gareeb Nawaz Enterprises. All rights reserved.
             </p>
              {/* <div className="flex gap-6 text-xs text-gray-500 font-(--font-inter)">
                 <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

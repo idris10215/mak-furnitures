@@ -65,15 +65,15 @@ export async function generateMetadata({ params }) {
 
   if (!data) {
     return {
-      title: 'Category Not Found | Ghareeb Nawaz Enterprises',
+      title: 'Category Not Found | Gareeb Nawaz Enterprises',
     };
   }
 
   return {
-    title: `${data.title} | Ghareeb Nawaz Enterprises`,
-    description: `Explore our exclusive collection of ${data.title.toLowerCase()}. Handcrafted in Bangalore by Ghareeb Nawaz Enterprises.`,
+    title: `${data.title} | Gareeb Nawaz Enterprises`,
+    description: `Explore our exclusive collection of ${data.title.toLowerCase()}. Handcrafted in Bangalore by Gareeb Nawaz Enterprises.`,
     openGraph: {
-      title: `${data.title} | Ghareeb Nawaz Enterprises`,
+      title: `${data.title} | Gareeb Nawaz Enterprises`,
       description: `Premium ${data.title.toLowerCase()} customized to your style.`,
       images: [data.subtypes[0]?.image || '/image2.png'],
     },
